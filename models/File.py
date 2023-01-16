@@ -1,4 +1,4 @@
-from peewee import BigIntegerField, TextField, BigIntegerField, TimestampField, CharField, DateTimeField
+from peewee import BigIntegerField, TextField, BigIntegerField, TimestampField, CharField, DateTimeField, BooleanField, ForeignKeyField
 from models.BaseModel import BaseModel
 
 
@@ -16,5 +16,7 @@ class File(BaseModel):
     absolute_path = TextField()
 
     hashsum = CharField(max_length=32)
+    is_duplicate = BooleanField(default=False)
+    parent = ForeignKeyField('self', backref='children', null=True)
 
     created_at = DateTimeField(default=get_timestamp_now)

@@ -16,7 +16,4 @@ class File(BaseModel):
     absolute_path = TextField()
 
     hashsum = CharField(max_length=32)
-    is_duplicate = BooleanField(default=False)
-    parent = ForeignKeyField('self', backref='children', null=True)
-
     created_at = DateTimeField(default=get_timestamp_now)

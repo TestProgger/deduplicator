@@ -12,6 +12,8 @@ class File(BaseModel):
     mtime = TimestampField()
     ctime = TimestampField()
 
+    absolute_path = TextField()
+
     hashsum = CharField(max_length=32)
 
     created_at = DateTimeField(default=get_timestamp_now)

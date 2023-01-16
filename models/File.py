@@ -1,7 +1,8 @@
 from peewee import BigIntegerField, TextField, BigIntegerField, TimestampField, CharField, DateTimeField
-from BaseModel import BaseModel
+from models.BaseModel import BaseModel
 
-from utils import get_timestamp_now
+
+from utils.time import get_timestamp_now
 
 
 class File(BaseModel):

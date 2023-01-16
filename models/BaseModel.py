@@ -1,6 +1,6 @@
 from peewee import Model
 from peewee import AutoField
-from db import db
+from models.db import db
 
 
 class BaseModel(Model):
